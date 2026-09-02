@@ -10,23 +10,22 @@
   <body>
     <h1>ProjectHub</h1>
     <h2>My Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Weather App</h3>
-        <p>A weather application built with React.</p>
-        <button>View Project</button>
+    <div class="projects" id="projects-container"></div>
+    <button id="new-project-button">Create New Project</button>
+    <div class="project" id="new-project-form" hidden>
+      <h3>New Project</h3>
+      <div class="form-row">
+        <label for="project-name">Name: </label>
+        <input type="text" id="project-name" />
       </div>
-      <div class="project">
-        <h3>Game Tracker</h3>
-        <p>Track the games I've played.</p>
-        <button>View Project</button>
+      <div class="form-row">
+        <label for="project-description">Description: </label>
+        <textarea id="project-description"></textarea>
       </div>
-      <div class="project">
-        <h3>Project Manager</h3>
-        <p>Manage the planning and development of my personal projects.</p>
-        <button>View Project</button>
+      <div class="form-actions">
+        <button id="create-project">Create</button>
+        <button id="cancel-project">Cancel</button>
       </div>
     </div>
-    <button>Create New Project</button>
   </body>
 </html>
