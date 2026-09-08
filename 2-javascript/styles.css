@@ -2,6 +2,7 @@ body {
   font-family: sans-serif;
   max-width: 900px;
   margin: 0 auto;
+  padding: 1rem;
 }
 
 .projects {
@@ -33,6 +34,7 @@ body {
 
   textarea {
     width: 100%;
+    font-family: inherit;
   }
 }
 
