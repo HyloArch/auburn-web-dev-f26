@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import ProjectCard from "./components/project-card";
-import ProjectForm from "./components/project-form/ProjectForm";
+import { ProjectFormWithState } from "./components/project-form/ProjectForm";
 
 function App() {
   const [projects, setProjects] = useState([
@@ -43,7 +43,7 @@ function App() {
           Create New Project
         </button>
       ) : (
-        <ProjectForm
+        <ProjectFormWithState
           onSubmit={addProject}
           close={() => setShowProjectForm(false)}
         />
