@@ -74,10 +74,22 @@ func postProjects(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func deleteProjectsByID(w http.ResponseWriter, r *http.Request) {
+	id, err := strconv.Atoi(r.PathValue("id"))
+	if err != nil {
+		http.Error(w, "Project IDs must be an integer", http.StatusBadRequest)
+	}
+
+	projects = slices.DeleteFunc(projects, func(p Project) bool { return p.ID == id })
+
+	w.WriteHeader(http.StatusOK)
+}
+
 func main() {
 	http.HandleFunc("GET /projects", getProjects)
 	http.HandleFunc("POST /projects", postProjects)
 	http.HandleFunc("GET /projects/{id}", getProjectsByID)
+	http.HandleFunc("DELETE /projects/{id}", deleteProjectsByID)
 
 	log.Printf("Server running on http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
